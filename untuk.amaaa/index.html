@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special For You</title>
+  <script src="https://dekatutorial.github.io/flwr/s.js"></script>
+</head>
+<body>
+
+  <!-- OPEN SCREEN -->
+  <div class="open">
+    <i>❤️</i>
+    <span>Klik love nya cill</span>
+  </div>
+
+  <!-- LINK AKHIR -->
+  <div id="finalLink" style="
+    display:none;
+    position:fixed;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:99999;
+  ">
+    <a href="#"
+       id="finalBtn"
+       style="
+         background:rgba(255,255,255,0.9);
+         color:#000;
+         padding:12px 20px;
+         border-radius:20px;
+         text-decoration:none;
+         font-size:14px;
+         font-weight:bold;
+         box-shadow:0 4px 10px rgba(0,0,0,.3);
+       ">
+      Klik ini bocil canci🩶
+    </a>
+  </div>
+
+  <script>
+    const targetUrl = "https://dari-gima.github.io/dari.irgi/32.html";
+
+    ucapan = `Hei Hei Bocilnya irgi, amaaa bocill canciii
+    bacanyaa sedikit agakk cepatt yaaaa xixixi
+    Maaf yaa sayangg irgiii selaluu ngecewain amaaa
+    btw happy birthdayy sayanggggg❤️
+    semogaaa panjangg umurr, sehatt selaluuu
+    di permudah rezekina nya geuliss
+    pokonya apa yang amaa harapkan terharapkan otheyyy
+    ATAPUUUUUUUUUU MORE CANCII BOCILLL NYA IRGIIII🩶`;
+
+    musik = `Musik.mp3`;
+    nomorWhatsapp = ``;
+    idTelegram = ``;
+
+    DekaTutorial(ucapan, musik, nomorWhatsapp, idTelegram);
+
+    // tampilkan link setelah bacaan selesai
+    document.querySelector(".open").addEventListener("click", () => {
+      setTimeout(() => {
+        document.getElementById("finalLink").style.display = "block";
+      }, 38000);
+    });
+
+    // KLIK LINK AKHIR
+    document.getElementById("finalBtn").addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // MATIKAN AUDIO SEKERAS-KERASNYA
+      try {
+        if (typeof audio !== "undefined") {
+          audio.muted = true;
+          audio.pause();
+          audio.src = "";
+          audio.load();
+        }
+      } catch (e) {}
+
+      // buka tab tujuan
+      window.open(targetUrl, "_blank");
+
+      // TUTUP TAB INI (WORK JIKA DIBUKA VIA JS)
+      setTimeout(() => {
+        window.close();
+      }, 100);
+    });
+  </script>
+
+</body>
+</html>
